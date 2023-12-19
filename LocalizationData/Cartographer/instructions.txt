@@ -1,0 +1,14 @@
+1. install cartographer
+2. copy my_robot.lua to /home/uroshpet/Master_thesis_ROS_workspaces/cartographer_ws/install_isolated/share/cartographer_ros/configuration_files
+3. copy my_robot.launch to /home/uroshpet/Master_thesis_ROS_workspaces/cartographer_ws/install_isolated/share/cartographer_ros/lauch
+4. copy donkey_2d.urdf to /home/uroshpet/Master_thesis_ROS_workspaces/cartographer_ws/install_isolated/share/cartographer_ros/urdf
+
+export ROS_MASTER_URI=http://ip_of_host_machine:11311/ to all machines as roscore ip
+export ROS_IP=ip_of_donkey_car on donkey car ip
+sudo ntpd ip_of_host_machine on donkeycar
+launch in 2 windows roslaunch rplidar_ros rplidar.launch and roslaunch mpu9250-driver mpu9250.launch on donkey car
+
+roslaunch cartographer_ros my_robot.launch  on host machine, open rviz and add map and tf. Enjoy!
+
+
+open rviz on host and while driving the car map data

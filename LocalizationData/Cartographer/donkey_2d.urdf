@@ -1,0 +1,67 @@
+<!--
+  Copyright 2016 The Cartographer Authors
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+
+<robot name="donkey_car">
+  <material name="orange">
+    <color rgba="1.0 0.5 0.2 1" />
+  </material>
+  <material name="gray">
+    <color rgba="0.2 0.2 0.2 1" />
+  </material>
+  
+  
+  <link name="donkey_car"/>
+  <link name="base_link"/>
+
+  <joint name="donkey_car_link_joint" type="fixed">
+    <parent link="base_link" />
+    <child link="donkey_car" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+  </joint>
+
+  <link name="imu_frame">
+    <visual>
+      <origin xyz="0 0 0" />
+      <geometry>
+        <box size="0.06 0.04 0.02" />
+      </geometry>
+      <material name="orange" />
+    </visual>
+  </link>
+
+  <link name="laser">
+    <visual>
+      <origin xyz="0 0 0" />
+      <geometry>
+        <cylinder length="0.05" radius="0.03" />
+      </geometry>
+      <material name="gray" />
+    </visual>
+  </link>
+  
+  <joint name="imu_link_joint" type="fixed">
+    <parent link="donkey_car" />
+    <child link="imu_frame" />
+    <origin xyz="0.006253 -0.011775 0.007645" rpy="0 0 0" />
+  </joint>
+
+  <joint name="lidar_link_joint" type="fixed">
+    <parent link="donkey_car" />
+    <child link="laser" />
+    <origin xyz="0.0 0.0 0.03618" rpy="0 0 0" />
+  </joint>
+  
+</robot>
