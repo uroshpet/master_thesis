@@ -1,6 +1,6 @@
-Copy all files to projects/donkeycar/donkeycar/object_detector
-Changee all paths in the .py scripts to match the paths of the donkeycar
-Copy manage_steering.py to mycar directory
+- Copy all files to projects/donkeycar/donkeycar/object_detector
+- Changee all paths in the .py scripts to match the paths of the donkeycar
+- Copy manage_steering.py to mycar directory
 
 1. Set STOP_SIGN_DETECTOR parameter to true to load models
 2. In manage_steering.py navigate to cfg.STOP_SIGN detector and uncomment(comment) the model you wish to load (that will be the from line and the V.add line)
